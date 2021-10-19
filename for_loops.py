@@ -9,11 +9,19 @@ def count(first, last):
     :param second: The final number. Must be included
     :return: A string containing the numbers
     """
-    pass # make sure to delete this line when you write your own function
+    last = last + 1
+    number_string = ""
+    for i in range(first, last):
+        number_string += str(i) + " "
+    return number_string
+
+
+
 
 
 def main():
     print(count(0, 6))
+    print(count(4, 5))
 
 
 if __name__ == '__main__':

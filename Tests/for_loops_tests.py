@@ -12,7 +12,9 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual("3 ", count(3, 3))
 
     def test_multiplication_tables(self):
-        self.assertEqual("6 12 18 24 30 36 42 48 54 60 66 72 ", multiplication_table(6))
+        self.assertEqual("0 6 12 18 24 30 36 42 48 54 60 66 ", multiplication_table(6))
+        self.assertEqual("0 2 4 6 8 10 12 14 16 18 20 22 ", multiplication_table(2))
+        self.assertEqual("0 5 10 15 20 25 30 35 40 45 50 55 ", multiplication_table(5))
         # Create two additional tests underneath this line
 
     def test_fibonacci(self):
