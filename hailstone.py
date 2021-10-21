@@ -5,17 +5,20 @@ def sequence(number):
     :param number: The starting number for the Hailstone sequence
     :return: The number of steps taken to reach 1
     """
-    total = 1
+    length_of_cycle = 1
+
     while number != 1:
-        print(total)
+
         if number % 2 == 0:
             number = number / 2
+            length_of_cycle = length_of_cycle + 1
         else:
             number = (number * 3) + 1
-        total = total + 1
+            length_of_cycle = length_of_cycle + 1
+    print(length_of_cycle)
+    return length_of_cycle
 
-        return total
 
 
 
-sequence(13)
+
