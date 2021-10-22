@@ -3,7 +3,7 @@ import random
 def get_number():
     """
 
-    :return:
+    :return: returns the randomly generated number
     """
     number = random.randint(1,11)
     return number
@@ -11,35 +11,47 @@ def get_number():
 
 
 def user_inputs():
+    """
+
+    :return: returns if the user wants to play or not
+    """
     play_game = input("Would you like to play a game of Nim? ")
     if play_game == "y":
         return play_game
     elif play_game == "n":
         return play_game
 
-
 def playing_game(pile0, pile1):
-    pile_number = input("Pile 1 or 0? ")
-    pile_total = 0
-    if pile_number == 0:
-        pile_total = pile0
-    elif pile_number == 1:
-        pile_total = pile1
-    while pile_total != 100:
-        print(pile0)
-        print(pile1)
-        move = input("Please enter the amount of stones you would like to remove from the pile")
-        if move == 1 and pile_total >= 1:
-            pile_total = pile_total - move
-        elif move == 2 and pile_total >= 2:
-            pile_total = pile_total - move
-        elif move == 3 and pile_total >= 3:
-            pile_total = pile_total - move
-        computer_move()
+    stones = 0
+    player_move = True
+    while pile0 != 0 and pile1 != 0:
+        pile_number = int(input("Pile 0 or 1? "))
+        if pile_number == 0:
+            pile_of_stones = pile0
+        elif pile_number == 1:
+            pile_of_stones = pile1
+        while player_move == True:
+            print(pile0)
+            print(pile1)
+            move = int(input("Please enter the amount of stones you would like to remove from the pile "))
+            if move == 1 and pile_of_stones >= 1:
+                pile_of_stones = pile_of_stones - move
+                player_move = False
+            elif move == 2 and pile_of_stones >= 2:
+                pile_of_stones = pile_of_stones - move
+                player_move = False
+            elif move == 3 and pile_of_stones >= 3:
+                pile_of_stones = pile_of_stones - move
+                player_move = False
+            print(pile_of_stones)
+            player_move = False
+        while player_move == False:
+            break
 
-def computer_move():
-    comp_move = random.randint(1, 4)
-    return comp_move
+
+
+
+
 
 
 def main():
