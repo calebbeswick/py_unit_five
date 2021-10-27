@@ -1,3 +1,5 @@
+#Caleb Beswick 10/26 creates a game on Nims
+# ***Not working yet***
 import random
 
 def get_number():
@@ -22,6 +24,12 @@ def user_inputs():
         return play_game
 
 def playing_game(pile0, pile1):
+    """
+
+    :param pile0: The first pile of stones
+    :param pile1: The second pile of stones
+    :return:
+    """
     player_move = True
     while pile0 != 0 and pile1 != 0:
         pile_number = int(input("Pile 0 or 1? "))
